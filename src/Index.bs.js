@@ -5,6 +5,8 @@ var ReactDOMRe = require("reason-react/src/ReactDOMRe.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 var App$ReactTemplate = require("./App.bs.js");
 
+((require('./index.css')));
+
 ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, App$ReactTemplate.make(/* array */[])), "react-app");
 
 /*  Not a pure module */
