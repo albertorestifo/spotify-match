@@ -7,6 +7,8 @@ var App$ReactTemplate = require("./App.bs.js");
 
 ((require('./index.css')));
 
+((require('normalize.css')));
+
 ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, App$ReactTemplate.make(/* array */[])), "react-app");
 
 /*  Not a pure module */
