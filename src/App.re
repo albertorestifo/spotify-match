@@ -4,7 +4,7 @@ type route =
 type state = {route};
 
 type action =
-  | ShowHome;
+  | SetRoute(route);
 
 let component = ReasonReact.reducerComponent("App");
 
@@ -13,20 +13,20 @@ let make = _children => {
 
   initialState: () => {route: Home},
 
-  reducer: (action, _state) =>
-    switch (action) {
-    | ShowHome => ReasonReact.Update({route: Home})
-    },
-
   didMount: self => {
     let watcherID =
       ReasonReact.Router.watchUrl(url =>
         switch (url.hash) {
-        | _ => self.send(ShowHome)
+        | _ => self.send(SetRoute(Home))
         }
       );
     self.onUnmount(() => ReasonReact.Router.unwatchUrl(watcherID));
   },
+
+  reducer: (action, _state) =>
+    switch (action) {
+    | SetRoute(r) => ReasonReact.Update({route: r})
+    },
 
   render: _self => <p> {ReasonReact.string("Hello, world!")} </p>,
 };
