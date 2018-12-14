@@ -1,4 +1,13 @@
 .title {
   font-size: 2.5rem;
-  margin-top: 0;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.8em;
+  text-align: center;
+  max-width: 45ch;
+  line-height: 1.4;
+  color: var(--oc-gray-6);
 }
