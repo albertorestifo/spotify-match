@@ -28,5 +28,6 @@ let make = _children => {
     | SetRoute(r) => ReasonReact.Update({route: r})
     },
 
-  render: _self => <p> {ReasonReact.string("Hello, world!")} </p>,
+  render: _self =>
+    <LayoutView> <p> {ReasonReact.string("Hello, world!")} </p> </LayoutView>,
 };
