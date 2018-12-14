@@ -1,3 +1,5 @@
 body {
   font-family: "Roboto", sans-serif;
+  background-color: var(--oc-gray-0);
+  color: var(--oc-gray-8);
 }
