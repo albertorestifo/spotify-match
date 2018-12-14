@@ -3,3 +3,7 @@ body {
   background-color: var(--oc-gray-0);
   color: var(--oc-gray-8);
 }
+
+* {
+  box-sizing: border-box;
+}

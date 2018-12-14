@@ -28,6 +28,10 @@ let make = _children => {
     | SetRoute(r) => ReasonReact.Update({route: r})
     },
 
-  render: _self =>
-    <LayoutView> <p> {ReasonReact.string("Hello, world!")} </p> </LayoutView>,
+  render: self =>
+    <LayoutView>
+      {switch (self.state.route) {
+       | Home => <HomeView />
+       }}
+    </LayoutView>,
 };
