@@ -37,17 +37,22 @@ let make = _children => {
       <>
         {ReasonReact.array(
            Array.of_list(
-             List.map(
-               ((n, uri)) =>
-                 <input
-                   key={string_of_int(n)}
-                   type_="text"
-                   value=uri
-                   onChange={event => {
-                     let value = ReactEvent.Form.currentTarget(event)##value;
-                     self.send(Change((n, value)));
-                   }}
-                 />,
+             List.rev_map(
+               ((id, uri)) =>
+                 <div key={string_of_int(id)}>
+                   <input
+                     type_="text"
+                     value=uri
+                     onChange={event => {
+                       let value =
+                         ReactEvent.Form.currentTarget(event)##value;
+                       self.send(Change((id, value)));
+                     }}
+                   />
+                   <button onClick={_event => self.send(Remove(id))}>
+                     {ReasonReact.string("X")}
+                   </button>
+                 </div>,
                self.state.uris,
              ),
            ),
