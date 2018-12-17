@@ -7,6 +7,7 @@ let make = (~onChangeLink, _children) => {
   let handleSubmit = (event, self) => {
     ReactEvent.Synthetic.preventDefault(event);
     onChangeLink(self.ReasonReact.state.uri);
+    ReasonReact.Router.push("/them");
   };
 
   {

@@ -41,6 +41,7 @@ let make = _children => {
       {switch (self.state.route) {
        | ["you"] =>
          <YouView onChangeLink={uri => self.send(SetLink(You(uri)))} />
+       | ["them"] => <ThemView />
        | _ => <HomeView />
        }}
     </LayoutView>,
