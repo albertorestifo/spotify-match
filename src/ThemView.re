@@ -17,7 +17,7 @@ let make = _children => {
            last one added */
         let (lastID, _) =
           try (List.nth(uris, 0)) {
-          | Failure("nth") => ((-1), "")
+          | _ => ((-1), "")
           };
 
         ReasonReact.Update({uris: [(lastID + 1, ""), ...uris]});
