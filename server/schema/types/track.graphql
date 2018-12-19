@@ -1,0 +1,8 @@
+type Track {
+  id: ID!
+  name: String!
+  album: Album!
+  artists: [Artist!]!
+  # Popularity of the track, it;s a number between 0 and 100
+  popularity: Int!
+}

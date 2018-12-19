@@ -1,0 +1,5 @@
+# Query type represents all the entry points to the API
+type Query {
+  # Get the content of a specific playlist given a spotify URL or URI
+  playlsit(uri: String): Playlist!
+}

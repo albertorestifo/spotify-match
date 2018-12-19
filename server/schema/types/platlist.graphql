@@ -1,0 +1,10 @@
+type Playlist {
+  id: ID!
+  items: [Item]!
+}
+
+type Item {
+  id: ID!
+  addedAt: String!
+  track: Track!
+}
